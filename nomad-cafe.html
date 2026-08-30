@@ -1,0 +1,1359 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Nomad Cafe — coffee, pastries and good atmosphere."
+  >
+
+  <title>Nomad Cafe — Coffee & More</title>
+
+  <style>
+
+    :root {
+      --dark: #171512;
+      --cream: #f4efe6;
+      --brown: #76583f;
+      --light: #e8dfd2;
+      --white: #fffdf9;
+      --muted: #716b62;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--dark);
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    nav {
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      z-index: 100;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      padding:
+        20px
+        5vw;
+
+      background:
+        rgba(244, 239, 230, .88);
+
+      backdrop-filter:
+        blur(15px);
+
+      border-bottom:
+        1px solid
+        rgba(0,0,0,.08);
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+
+      font-size: 23px;
+
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+
+      gap: 30px;
+
+      font-size: 13px;
+    }
+
+    .nav-button {
+      padding:
+        10px
+        18px;
+
+      border:
+        1px solid
+        var(--dark);
+
+      border-radius:
+        50px;
+
+      font-size: 12px;
+
+      font-weight: bold;
+    }
+
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .hero {
+      min-height: 100vh;
+
+      padding:
+        130px
+        5vw
+        70px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 5vw;
+
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin-bottom: 25px;
+
+      color: var(--brown);
+
+      font-size: 11px;
+
+      font-weight: bold;
+
+      letter-spacing:
+        .22em;
+
+      text-transform:
+        uppercase;
+    }
+
+    .hero h1 {
+      max-width: 750px;
+
+      font-family:
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          65px,
+          9vw,
+          130px
+        );
+
+      line-height:
+        .83;
+
+      letter-spacing:
+        -.06em;
+    }
+
+    .hero-text {
+      max-width: 560px;
+
+      margin-top: 35px;
+
+      color: var(--muted);
+
+      font-size: 18px;
+    }
+
+    .buttons {
+      display: flex;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding:
+        15px
+        23px;
+
+      border:
+        1px solid
+        var(--dark);
+
+      border-radius:
+        50px;
+
+      font-size: 12px;
+
+      font-weight: bold;
+
+      transition:
+        .3s;
+    }
+
+    .button.dark {
+      background:
+        var(--dark);
+
+      color:
+        var(--white);
+    }
+
+    .button:hover {
+      transform:
+        translateY(-4px);
+    }
+
+
+    /* =========================
+       HERO IMAGE
+       ========================= */
+
+    .hero-image {
+
+      min-height: 620px;
+
+      background:
+
+        linear-gradient(
+          to top,
+          rgba(0,0,0,.55),
+          rgba(0,0,0,0)
+        ),
+
+        url(
+          "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1400&q=85"
+        )
+
+        center / cover;
+    }
+
+
+    /* =========================
+       INTRO
+       ========================= */
+
+    .intro {
+
+      padding:
+        120px
+        5vw;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        .7fr
+        1.3fr;
+
+      gap:
+        8vw;
+    }
+
+    .label {
+
+      color:
+        var(--brown);
+
+      font-size:
+        11px;
+
+      font-weight:
+        bold;
+
+      letter-spacing:
+        .2em;
+
+      text-transform:
+        uppercase;
+    }
+
+    .intro h2 {
+
+      max-width:
+        900px;
+
+      font-family:
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          45px,
+          6vw,
+          85px
+        );
+
+      line-height:
+        .9;
+
+      letter-spacing:
+        -.05em;
+    }
+
+
+    /* =========================
+       MENU
+       ========================= */
+
+    .menu {
+
+      padding:
+        120px
+        5vw;
+
+      background:
+        var(--dark);
+
+      color:
+        var(--white);
+    }
+
+    .menu-header {
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      align-items:
+        end;
+
+      gap:
+        30px;
+
+      margin-bottom:
+        60px;
+    }
+
+    .menu-header h2 {
+
+      font-family:
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          55px,
+          8vw,
+          110px
+        );
+
+      line-height:
+        .85;
+    }
+
+    .menu-note {
+
+      max-width:
+        280px;
+
+      color:
+        #aaa49b;
+
+      font-size:
+        13px;
+    }
+
+    .menu-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap:
+        1px;
+
+      background:
+        #403c36;
+    }
+
+    .menu-item {
+
+      padding:
+        30px;
+
+      background:
+        var(--dark);
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      gap:
+        20px;
+    }
+
+    .menu-item h3 {
+
+      font-family:
+        Georgia,
+        serif;
+
+      font-size:
+        28px;
+    }
+
+    .menu-item p {
+
+      margin-top:
+        7px;
+
+      color:
+        #99938a;
+
+      font-size:
+        13px;
+    }
+
+    .price {
+
+      white-space:
+        nowrap;
+
+      color:
+        #d6c2a7;
+
+      font-weight:
+        bold;
+    }
+
+
+    /* =========================
+       LOCATIONS
+       ========================= */
+
+    .locations {
+
+      padding:
+        120px
+        5vw;
+    }
+
+    .locations-grid {
+
+      margin-top:
+        60px;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap:
+        18px;
+    }
+
+    .location {
+
+      min-height:
+        350px;
+
+      padding:
+        35px;
+
+      background:
+        var(--light);
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      justify-content:
+        space-between;
+    }
+
+    .location h3 {
+
+      font-family:
+        Georgia,
+        serif;
+
+      font-size:
+        40px;
+    }
+
+    .location p {
+
+      color:
+        var(--muted);
+
+      font-size:
+        14px;
+    }
+
+    .location a {
+
+      display:
+        inline-block;
+
+      margin-top:
+        20px;
+
+      font-size:
+        12px;
+
+      font-weight:
+        bold;
+
+      border-bottom:
+        1px solid
+        var(--dark);
+
+      padding-bottom:
+        4px;
+    }
+
+
+    /* =========================
+       INSTAGRAM
+       ========================= */
+
+    .social {
+
+      padding:
+        120px
+        5vw;
+
+      background:
+        var(--light);
+    }
+
+    .social h2 {
+
+      margin-top:
+        25px;
+
+      font-family:
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          50px,
+          7vw,
+          100px
+        );
+
+      line-height:
+        .9;
+    }
+
+    .social-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap:
+        12px;
+
+      margin-top:
+        60px;
+    }
+
+    .social-image {
+
+      aspect-ratio:
+        1 / 1;
+
+      background-size:
+        cover;
+
+      background-position:
+        center;
+    }
+
+
+    /* =========================
+       CTA
+       ========================= */
+
+    .cta {
+
+      padding:
+        150px
+        5vw;
+
+      text-align:
+        center;
+    }
+
+    .cta h2 {
+
+      max-width:
+        950px;
+
+      margin:
+        20px auto;
+
+      font-family:
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          55px,
+          8vw,
+          115px
+        );
+
+      line-height:
+        .85;
+
+      letter-spacing:
+        -.06em;
+    }
+
+    .cta p {
+
+      max-width:
+        550px;
+
+      margin:
+        30px auto;
+
+      color:
+        var(--muted);
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+
+      padding:
+        55px
+        5vw
+        25px;
+
+      background:
+        var(--dark);
+
+      color:
+        var(--white);
+    }
+
+    .footer-top {
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      gap:
+        30px;
+
+      flex-wrap:
+        wrap;
+
+      padding-bottom:
+        50px;
+    }
+
+    .footer-logo {
+
+      font-family:
+        Georgia,
+        serif;
+
+      font-size:
+        35px;
+    }
+
+    footer p {
+
+      margin-top:
+        8px;
+
+      color:
+        #88827a;
+
+      font-size:
+        13px;
+    }
+
+    .footer-bottom {
+
+      padding-top:
+        20px;
+
+      border-top:
+        1px solid
+        #36332f;
+
+      color:
+        #66625c;
+
+      font-size:
+        11px;
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (
+      max-width: 800px
+    ) {
+
+      .nav-links {
+        display:
+          none;
+      }
+
+      .hero {
+
+        grid-template-columns:
+          1fr;
+
+        padding:
+          120px
+          6vw
+          60px;
+      }
+
+      .hero h1 {
+        font-size:
+          clamp(
+            65px,
+            17vw,
+            100px
+          );
+      }
+
+      .hero-image {
+        min-height:
+          430px;
+      }
+
+      .intro {
+
+        grid-template-columns:
+          1fr;
+
+        padding:
+          80px
+          6vw;
+      }
+
+      .menu {
+
+        padding:
+          80px
+          6vw;
+      }
+
+      .menu-header {
+
+        flex-direction:
+          column;
+
+        align-items:
+          flex-start;
+      }
+
+      .menu-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+      .locations {
+
+        padding:
+          80px
+          6vw;
+      }
+
+      .locations-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+      .social {
+
+        padding:
+          80px
+          6vw;
+      }
+
+      .social-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .cta {
+
+        padding:
+          100px
+          6vw;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVIGATION
+       ========================= -->
+
+  <nav>
+
+    <a href="#" class="logo">
+      NOMAD
+    </a>
+
+    <div class="nav-links">
+
+      <a href="#menu">
+        Menu
+      </a>
+
+      <a href="#locations">
+        Locations
+      </a>
+
+      <a href="#instagram">
+        Instagram
+      </a>
+
+    </div>
+
+    <a
+      href="#locations"
+      class="nav-button"
+    >
+      Find us
+    </a>
+
+  </nav>
+
+
+  <!-- =========================
+       HERO
+       ========================= -->
+
+  <section class="hero">
+
+    <div>
+
+      <div class="eyebrow">
+        Coffee · Pastries · Good vibes
+      </div>
+
+      <h1>
+        Good coffee.<br>
+        Good place.<br>
+        Good day.
+      </h1>
+
+      <p class="hero-text">
+        A modern coffee spot for slow mornings,
+        good conversations and great coffee.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          href="#menu"
+          class="button dark"
+        >
+          Explore menu →
+        </a>
+
+        <a
+          href="#locations"
+          class="button"
+        >
+          Find a location
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-image"></div>
+
+  </section>
+
+
+  <!-- =========================
+       INTRO
+       ========================= -->
+
+  <section class="intro">
+
+    <div class="label">
+      About Nomad
+    </div>
+
+    <h2>
+      More than coffee.
+      It's a place to slow down.
+    </h2>
+
+  </section>
+
+
+  <!-- =========================
+       MENU
+       ========================= -->
+
+  <section
+    class="menu"
+    id="menu"
+  >
+
+    <div class="menu-header">
+
+      <div>
+
+        <div class="label">
+          What we serve
+        </div>
+
+        <h2>
+          Menu
+        </h2>
+
+      </div>
+
+      <p class="menu-note">
+        A small selection of coffee,
+        drinks and pastries.
+      </p>
+
+    </div>
+
+
+    <div class="menu-grid">
+
+
+      <div class="menu-item">
+
+        <div>
+
+          <h3>
+            Espresso
+          </h3>
+
+          <p>
+            Rich and balanced.
+          </p>
+
+        </div>
+
+        <div class="price">
+          €2.00
+        </div>
+
+      </div>
+
+
+      <div class="menu-item">
+
+        <div>
+
+          <h3>
+            Cappuccino
+          </h3>
+
+          <p>
+            Espresso, milk and foam.
+          </p>
+
+        </div>
+
+        <div class="price">
+          €3.20
+        </div>
+
+      </div>
+
+
+      <div class="menu-item">
+
+        <div>
+
+          <h3>
+            Flat White
+          </h3>
+
+          <p>
+            Smooth and creamy.
+          </p>
+
+        </div>
+
+        <div class="price">
+          €3.50
+        </div>
+
+      </div>
+
+
+      <div class="menu-item">
+
+        <div>
+
+          <h3>
+            Iced Latte
+          </h3>
+
+          <p>
+            Cold, smooth and refreshing.
+          </p>
+
+        </div>
+
+        <div class="price">
+          €3.80
+        </div>
+
+      </div>
+
+
+      <div class="menu-item">
+
+        <div>
+
+          <h3>
+            Croissant
+          </h3>
+
+          <p>
+            Freshly baked.
+          </p>
+
+        </div>
+
+        <div class="price">
+          €2.50
+        </div>
+
+      </div>
+
+
+      <div class="menu-item">
+
+        <div>
+
+          <h3>
+            Cheesecake
+          </h3>
+
+          <p>
+            Creamy and homemade style.
+          </p>
+
+        </div>
+
+        <div class="price">
+          €4.20
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       LOCATIONS
+       ========================= -->
+
+  <section
+    class="locations"
+    id="locations"
+  >
+
+    <div class="label">
+      Come visit
+    </div>
+
+    <div class="locations-grid">
+
+
+      <article class="location">
+
+        <div>
+
+          <h3>
+            Nomad
+            Central
+          </h3>
+
+          <p>
+            Baia Mare
+          </p>
+
+        </div>
+
+        <div>
+
+          <p>
+            Monday — Sunday<br>
+            08:00 — 20:00
+          </p>
+
+          <a
+            href="#"
+          >
+            Open in Google Maps →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article class="location">
+
+        <div>
+
+          <h3>
+            Nomad
+            Second
+          </h3>
+
+          <p>
+            Baia Mare
+          </p>
+
+        </div>
+
+        <div>
+
+          <p>
+            Monday — Sunday<br>
+            08:00 — 20:00
+          </p>
+
+          <a
+            href="#"
+          >
+            Open in Google Maps →
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       INSTAGRAM
+       ========================= -->
+
+  <section
+    class="social"
+    id="instagram"
+  >
+
+    <div class="label">
+      Follow the journey
+    </div>
+
+    <h2>
+      Coffee,
+      people & moments.
+    </h2>
+
+
+    <div class="social-grid">
+
+      <div
+        class="social-image"
+        style="
+          background-image:
+          url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=800&q=85');
+        "
+      ></div>
+
+      <div
+        class="social-image"
+        style="
+          background-image:
+          url('https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=800&q=85');
+        "
+      ></div>
+
+      <div
+        class="social-image"
+        style="
+          background-image:
+          url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=85');
+        "
+      ></div>
+
+      <div
+        class="social-image"
+        style="
+          background-image:
+          url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=85');
+        "
+      ></div>
+
+    </div>
+
+
+    <div class="buttons">
+
+      <a
+        href="https://www.instagram.com/"
+        target="_blank"
+        rel="noopener"
+        class="button"
+      >
+        Follow Instagram ↗
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CTA
+       ========================= -->
+
+  <section class="cta">
+
+    <div class="label">
+      See you soon
+    </div>
+
+    <h2>
+      Your next coffee
+      is waiting.
+    </h2>
+
+    <p>
+      Drop by, grab your favourite coffee
+      and stay a little longer.
+    </p>
+
+    <div class="buttons">
+
+      <a
+        href="#locations"
+        class="button dark"
+      >
+        Find us →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
+
+    <div class="footer-top">
+
+      <div>
+
+        <div class="footer-logo">
+          NOMAD
+        </div>
+
+        <p>
+          Coffee · Pastries · Good vibes
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <p>
+          Demo concept created by
+          SERG WEB
+        </p>
+
+        <p>
+          Website concept · 2026
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+      This website is a portfolio concept
+      and is not an official Nomad Cafe website.
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
+```
