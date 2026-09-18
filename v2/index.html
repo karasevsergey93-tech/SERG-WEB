@@ -78,8 +78,38 @@
     }
     .nav-links a { transition: color .2s ease; }
     .nav-links a:hover { color: var(--text); }
-    .nav-cta {
+    .nav-actions {
       justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .lang-btn {
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      min-width: 34px;
+      height: 32px;
+      padding: 0 8px;
+      font: inherit;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      cursor: pointer;
+    }
+    .lang-btn.active {
+      background: var(--text);
+      color: var(--bg);
+    }
+    .nav-cta {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -483,9 +513,12 @@
       .nav { min-height: 68px; }
       .brand { font-size: 12px; }
       .brand-mark { width: 29px; height: 29px; }
-      .nav-cta { min-height: 38px; padding: 0 12px; font-size: 10px; }
+      .nav-actions { gap: 7px; }
+      .lang-switch { padding: 3px; }
+      .lang-btn { min-width: 28px; height: 30px; padding: 0 5px; font-size: 9px; }
+      .nav-cta { min-height: 38px; padding: 0 10px; font-size: 9px; }
       .hero { padding: 118px 0 56px; }
-      .hero h1 { font-size: clamp(58px, 18vw, 92px); }
+      .hero h1 { font-size: clamp(52px, 15vw, 76px); line-height: .9; }
       .hero-panel { min-height: 390px; padding: 20px; }
       .section { padding: 84px 0; }
       .section-head { grid-template-columns: 1fr; gap: 18px; margin-bottom: 40px; }
@@ -518,12 +551,18 @@
     <div class="shell nav">
       <a class="brand" href="#top" aria-label="SERG WEB home"><span class="brand-mark">S</span><span>SERG WEB</span></a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#process">Process</a>
-        <a href="#about">About</a>
+        <a href="#services" data-i18n="navServices">Services</a>
+        <a href="#work" data-i18n="navWork">Work</a>
+        <a href="#process" data-i18n="navProcess">Process</a>
+        <a href="#about" data-i18n="navAbout">About</a>
       </nav>
-      <a class="nav-cta" href="https://www.instagram.com/sergwebcraft/" target="_blank" rel="noopener noreferrer">LET'S TALK ↗</a>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button class="lang-btn" type="button" data-lang="ua" aria-label="Українська">UA</button>
+          <button class="lang-btn" type="button" data-lang="en" aria-label="English">EN</button>
+        </div>
+        <a class="nav-cta" href="https://www.instagram.com/sergwebcraft/" target="_blank" rel="noopener noreferrer" data-i18n="talk">LET'S TALK ↗</a>
+      </div>
     </div>
   </header>
 
@@ -531,24 +570,24 @@
     <section class="hero">
       <div class="shell hero-grid">
         <div class="reveal">
-          <p class="eyebrow">Websites for small & local businesses</p>
-          <h1>Look local.<br>Feel <span>serious.</span></h1>
-          <p class="hero-copy">Clear, modern websites that help customers understand your business, trust it and contact you without unnecessary complexity.</p>
+          <p class="eyebrow" data-i18n="heroEyebrow">Websites for small & local businesses</p>
+          <h1 data-i18n-html="heroTitle">Websites for<br><span>local businesses.</span></h1>
+          <p class="hero-copy" data-i18n="heroCopy">Clear, modern websites that help customers understand your business, trust it and contact you without unnecessary complexity.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="#work">View selected work →</a>
-            <a class="btn btn-secondary" href="https://www.instagram.com/sergwebcraft/" target="_blank" rel="noopener noreferrer">DM “WEB”</a>
+            <a class="btn btn-primary" href="#work" data-i18n="viewWork">View selected work →</a>
+            <a class="btn btn-secondary" href="https://www.instagram.com/sergwebcraft/" target="_blank" rel="noopener noreferrer" data-i18n="dmWeb">DM “WEB”</a>
           </div>
         </div>
 
         <aside class="hero-panel reveal" aria-label="SERG WEB positioning">
           <div class="panel-top">
             <span class="panel-index">01 / SERG WEB</span>
-            <span class="panel-chip">Ukraine & Europe</span>
+            <span class="panel-chip" data-i18n="region">Ukraine & Europe</span>
           </div>
           <div class="panel-symbol">S</div>
           <div class="panel-bottom">
-            <small>Simple websites. Real business opportunities.</small>
-            <h2>Built for the businesses people visit, book and recommend.</h2>
+            <small data-i18n="panelSmall">Simple websites. Real business opportunities.</small>
+            <h2 data-i18n="panelTitle">Built for the businesses people visit, book and recommend.</h2>
           </div>
         </aside>
       </div>
@@ -556,33 +595,33 @@
 
     <div class="ticker" aria-hidden="true">
       <div class="ticker-track">
-        <span>Restaurants</span><b>•</b><span>Cafés</span><b>•</b><span>Shops</span><b>•</b><span>Beauty</span><b>•</b><span>Local services</span><b>•</b>
-        <span>Restaurants</span><b>•</b><span>Cafés</span><b>•</b><span>Shops</span><b>•</b><span>Beauty</span><b>•</b><span>Local services</span><b>•</b>
+        <span data-i18n="tickerRestaurants">Restaurants</span><b>•</b><span data-i18n="tickerCafes">Cafés</span><b>•</b><span data-i18n="tickerShops">Shops</span><b>•</b><span data-i18n="tickerBeauty">Beauty</span><b>•</b><span data-i18n="tickerServices">Local services</span><b>•</b>
+        <span data-i18n="tickerRestaurants">Restaurants</span><b>•</b><span data-i18n="tickerCafes">Cafés</span><b>•</b><span data-i18n="tickerShops">Shops</span><b>•</b><span data-i18n="tickerBeauty">Beauty</span><b>•</b><span data-i18n="tickerServices">Local services</span><b>•</b>
       </div>
     </div>
 
     <section class="section" id="services">
       <div class="shell">
         <div class="section-head reveal">
-          <p class="section-kicker">01 / Services</p>
+          <p class="section-kicker" data-i18n="servicesKicker">01 / Services</p>
           <div>
-            <h2>A website with a job to do.</h2>
-            <p>Not a pile of effects. A focused digital place where a customer can quickly understand what you offer and what to do next.</p>
+            <h2 data-i18n="servicesTitle">A website with a job to do.</h2>
+            <p data-i18n="servicesIntro">Not a pile of effects. A focused digital place where a customer can quickly understand what you offer and what to do next.</p>
           </div>
         </div>
 
         <div class="services reveal">
           <article class="service">
             <span class="service-no">01 / ONE-PAGE</span>
-            <div><h3>Business website</h3><p>A clear one-page site for a local business: offer, trust, services, contacts and a strong next step.</p></div>
+            <div><h3 data-i18n="service1Title">Business website</h3><p data-i18n="service1Text">A clear one-page site for a local business: offer, trust, services, contacts and a strong next step.</p></div>
           </article>
           <article class="service">
             <span class="service-no">02 / MOBILE</span>
-            <div><h3>Mobile-first design</h3><p>Designed around how customers actually browse local businesses — mostly from their phones.</p></div>
+            <div><h3 data-i18n="service2Title">Mobile-first design</h3><p data-i18n="service2Text">Designed around how customers actually browse local businesses — mostly from their phones.</p></div>
           </article>
           <article class="service">
             <span class="service-no">03 / CONTACT</span>
-            <div><h3>Easy customer action</h3><p>Instagram, phone, maps or booking — the important actions stay obvious and easy to reach.</p></div>
+            <div><h3 data-i18n="service3Title">Easy customer action</h3><p data-i18n="service3Text">Instagram, phone, maps or booking — the important actions stay obvious and easy to reach.</p></div>
           </article>
         </div>
       </div>
@@ -591,21 +630,21 @@
     <section class="section work" id="work">
       <div class="shell">
         <div class="section-head reveal">
-          <p class="section-kicker">02 / Selected work</p>
+          <p class="section-kicker" data-i18n="workKicker">02 / Selected work</p>
           <div>
-            <h2>One strong concept beats four fake case studies.</h2>
-            <p>The portfolio starts with work we can explain honestly. Bograch is presented as an unofficial website concept — not as a paid client project.</p>
+            <h2 data-i18n="workTitle">One strong concept beats four fake case studies.</h2>
+            <p data-i18n="workIntro">The portfolio starts with work we can explain honestly. Bograch is presented as an unofficial website concept — not as a paid client project.</p>
           </div>
         </div>
 
         <article class="project-card reveal">
           <div class="project-copy">
             <div>
-              <div class="project-meta"><span class="tag">Restaurant</span><span class="tag">Website concept</span><span class="tag">Mukachevo</span></div>
+              <div class="project-meta"><span class="tag" data-i18n="tagRestaurant">Restaurant</span><span class="tag" data-i18n="tagConcept">Website concept</span><span class="tag" data-i18n="tagMukachevo">Mukachevo</span></div>
               <h3>Bograch.</h3>
-              <p>A restaurant concept focused on clear menu access, a mobile-first experience and simple contact or reservation actions.</p>
+              <p data-i18n="bograchText">A restaurant concept focused on clear menu access, a mobile-first experience and simple contact or reservation actions.</p>
             </div>
-            <div class="project-note"><strong>UNOFFICIAL WEBSITE CONCEPT.</strong><br>Created by SERG WEB as a portfolio concept. It is not the official Bograch website and does not claim client results.</div>
+            <div class="project-note" data-i18n-html="bograchNote"><strong>UNOFFICIAL WEBSITE CONCEPT.</strong><br>Created by SERG WEB as a portfolio concept. It is not the official Bograch website and does not claim client results.</div>
           </div>
 
           <div class="project-visual">
@@ -629,15 +668,15 @@
     <section class="section" id="process">
       <div class="shell">
         <div class="section-head reveal">
-          <p class="section-kicker">03 / Process</p>
-          <div><h2>Clear from first message to launch.</h2><p>A simple process keeps the project moving without endless revisions or technical confusion.</p></div>
+          <p class="section-kicker" data-i18n="processKicker">03 / Process</p>
+          <div><h2 data-i18n="processTitle">Clear from first message to launch.</h2><p data-i18n="processIntro">A simple process keeps the project moving without endless revisions or technical confusion.</p></div>
         </div>
 
         <div class="process-grid reveal">
-          <article class="step"><span class="step-no">01</span><h3>Understand</h3><p>Business, customers, goals and the action the website should make easier.</p></article>
-          <article class="step"><span class="step-no">02</span><h3>Structure</h3><p>Content hierarchy, sections and the shortest useful path for a visitor.</p></article>
-          <article class="step"><span class="step-no">03</span><h3>Design & build</h3><p>Visual direction and responsive development shaped around the same structure.</p></article>
-          <article class="step"><span class="step-no">04</span><h3>Launch</h3><p>Final mobile check, links, publishing and a clean handoff.</p></article>
+          <article class="step"><span class="step-no">01</span><h3 data-i18n="step1Title">Understand</h3><p data-i18n="step1Text">Business, customers, goals and the action the website should make easier.</p></article>
+          <article class="step"><span class="step-no">02</span><h3 data-i18n="step2Title">Structure</h3><p data-i18n="step2Text">Content hierarchy, sections and the shortest useful path for a visitor.</p></article>
+          <article class="step"><span class="step-no">03</span><h3 data-i18n="step3Title">Design & build</h3><p data-i18n="step3Text">Visual direction and responsive development shaped around the same structure.</p></article>
+          <article class="step"><span class="step-no">04</span><h3 data-i18n="step4Title">Launch</h3><p data-i18n="step4Text">Final mobile check, links, publishing and a clean handoff.</p></article>
         </div>
       </div>
     </section>
@@ -645,13 +684,13 @@
     <section class="section" id="about">
       <div class="shell about-grid reveal">
         <div>
-          <p class="section-kicker">04 / About</p>
-          <h2 class="about-title">Small studio.<br>Focused work.</h2>
+          <p class="section-kicker" data-i18n="aboutKicker">04 / About</p>
+          <h2 class="about-title" data-i18n-html="aboutTitle">Small studio.<br>Focused work.</h2>
         </div>
         <div class="about-copy">
-          <p>SERG WEB creates focused websites for small and local businesses. The goal is not to make a business look “techy” — it is to make the business easier to understand, trust and contact online.</p>
-          <p>Projects are kept practical: clear structure, strong mobile experience and only the features the business actually needs.</p>
-          <div class="location">Khust, Ukraine · Working with Ukraine & Europe</div>
+          <p data-i18n="aboutText1">SERG WEB creates focused websites for small and local businesses. The goal is not to make a business look “techy” — it is to make the business easier to understand, trust and contact online.</p>
+          <p data-i18n="aboutText2">Projects are kept practical: clear structure, strong mobile experience and only the features the business actually needs.</p>
+          <div class="location" data-i18n="location">Khust, Ukraine · Working with Ukraine & Europe</div>
         </div>
       </div>
     </section>
@@ -659,11 +698,11 @@
     <section class="contact" id="contact">
       <div class="shell contact-grid">
         <div class="reveal">
-          <p class="eyebrow">Have a local business?</p>
-          <h2>Let’s make it easier to choose you.</h2>
+          <p class="eyebrow" data-i18n="contactEyebrow">Have a local business?</p>
+          <h2 data-i18n="contactTitle">Let’s make it easier to choose you.</h2>
         </div>
         <div class="contact-links reveal">
-          <a class="contact-link" href="https://www.instagram.com/sergwebcraft/" target="_blank" rel="noopener noreferrer"><span>Instagram / DM “WEB”</span><span>↗</span></a>
+          <a class="contact-link" href="https://www.instagram.com/sergwebcraft/" target="_blank" rel="noopener noreferrer"><span data-i18n="contactInstagram">Instagram / DM “WEB”</span><span>↗</span></a>
           <a class="contact-link" href="mailto:webcraftserg@gmail.com"><span>webcraftserg@gmail.com</span><span>↗</span></a>
         </div>
       </div>
@@ -671,10 +710,117 @@
   </main>
 
   <footer>
-    <div class="shell footer-row"><strong>SERG WEB</strong><span>WEBSITES FOR LOCAL BUSINESSES</span><span>© 2026</span></div>
+    <div class="shell footer-row"><strong>SERG WEB</strong><span data-i18n="footerTagline">WEBSITES FOR LOCAL BUSINESSES</span><span>© 2026</span></div>
   </footer>
 
   <script>
+    const translations = {
+      en: {
+        navServices: 'Services', navWork: 'Work', navProcess: 'Process', navAbout: 'About', talk: "LET'S TALK ↗",
+        heroEyebrow: 'Websites for small & local businesses',
+        heroTitle: 'Websites for<br><span>local businesses.</span>',
+        heroCopy: 'Clear, modern websites that help customers understand your business, trust it and contact you without unnecessary complexity.',
+        viewWork: 'View selected work →', dmWeb: 'DM “WEB”',
+        region: 'Ukraine & Europe',
+        panelSmall: 'Simple websites. Real business opportunities.',
+        panelTitle: 'Built for the businesses people visit, book and recommend.',
+        tickerRestaurants: 'Restaurants', tickerCafes: 'Cafés', tickerShops: 'Shops', tickerBeauty: 'Beauty', tickerServices: 'Local services',
+        servicesKicker: '01 / Services', servicesTitle: 'A website with a job to do.',
+        servicesIntro: 'Not a pile of effects. A focused digital place where a customer can quickly understand what you offer and what to do next.',
+        service1Title: 'Business website', service1Text: 'A clear one-page site for a local business: offer, trust, services, contacts and a strong next step.',
+        service2Title: 'Mobile-first design', service2Text: 'Designed around how customers actually browse local businesses — mostly from their phones.',
+        service3Title: 'Easy customer action', service3Text: 'Instagram, phone, maps or booking — the important actions stay obvious and easy to reach.',
+        workKicker: '02 / Selected work', workTitle: 'One strong concept beats four fake case studies.',
+        workIntro: 'The portfolio starts with work we can explain honestly. Bograch is presented as an unofficial website concept — not as a paid client project.',
+        tagRestaurant: 'Restaurant', tagConcept: 'Website concept', tagMukachevo: 'Mukachevo',
+        bograchText: 'A restaurant concept focused on clear menu access, a mobile-first experience and simple contact or reservation actions.',
+        bograchNote: '<strong>UNOFFICIAL WEBSITE CONCEPT.</strong><br>Created by SERG WEB as a portfolio concept. It is not the official Bograch website and does not claim client results.',
+        processKicker: '03 / Process', processTitle: 'Clear from first message to launch.',
+        processIntro: 'A simple process keeps the project moving without endless revisions or technical confusion.',
+        step1Title: 'Understand', step1Text: 'Business, customers, goals and the action the website should make easier.',
+        step2Title: 'Structure', step2Text: 'Content hierarchy, sections and the shortest useful path for a visitor.',
+        step3Title: 'Design & build', step3Text: 'Visual direction and responsive development shaped around the same structure.',
+        step4Title: 'Launch', step4Text: 'Final mobile check, links, publishing and a clean handoff.',
+        aboutKicker: '04 / About', aboutTitle: 'Small studio.<br>Focused work.',
+        aboutText1: 'SERG WEB creates focused websites for small and local businesses. The goal is not to make a business look “techy” — it is to make the business easier to understand, trust and contact online.',
+        aboutText2: 'Projects are kept practical: clear structure, strong mobile experience and only the features the business actually needs.',
+        location: 'Khust, Ukraine · Working with Ukraine & Europe',
+        contactEyebrow: 'Have a local business?', contactTitle: 'Let’s make it easier to choose you.',
+        contactInstagram: 'Instagram / DM “WEB”', footerTagline: 'WEBSITES FOR LOCAL BUSINESSES'
+      },
+      ua: {
+        navServices: 'Послуги', navWork: 'Роботи', navProcess: 'Процес', navAbout: 'Про нас', talk: 'НАПИСАТИ ↗',
+        heroEyebrow: 'Сайти для малого та локального бізнесу',
+        heroTitle: 'Сайти для<br><span>локального бізнесу.</span>',
+        heroCopy: 'Зрозумілі сучасні сайти, які допомагають клієнтам швидко розібратися у вашій пропозиції, довіряти побаченому та легко зв’язатися з вами.',
+        viewWork: 'Переглянути роботи →', dmWeb: 'Написати “WEB”',
+        region: 'Україна та Європа',
+        panelSmall: 'Прості сайти. Реальні можливості для бізнесу.',
+        panelTitle: 'Для бізнесів, які люди відвідують, бронюють і рекомендують.',
+        tickerRestaurants: 'Ресторани', tickerCafes: 'Кав’ярні', tickerShops: 'Магазини', tickerBeauty: 'Beauty', tickerServices: 'Локальні послуги',
+        servicesKicker: '01 / Послуги', servicesTitle: 'Сайт має виконувати свою роботу.',
+        servicesIntro: 'Не набір ефектів, а зрозуміле місце онлайн, де клієнт швидко бачить вашу пропозицію та розуміє, що робити далі.',
+        service1Title: 'Сайт для бізнесу', service1Text: 'Зрозумілий односторінковий сайт: пропозиція, довіра, послуги, контакти та чіткий наступний крок.',
+        service2Title: 'Mobile-first дизайн', service2Text: 'Дизайн під те, як люди реально переглядають локальний бізнес — насамперед зі смартфона.',
+        service3Title: 'Проста дія для клієнта', service3Text: 'Instagram, телефон, карта або бронювання — головні дії завжди помітні та доступні.',
+        workKicker: '02 / Вибрані роботи', workTitle: 'Один сильний концепт кращий за чотири вигадані кейси.',
+        workIntro: 'У портфоліо показуємо лише те, що можемо чесно пояснити. Bograch — неофіційний концепт сайту, а не оплачений клієнтський проєкт.',
+        tagRestaurant: 'Ресторан', tagConcept: 'Концепт сайту', tagMukachevo: 'Мукачево',
+        bograchText: 'Концепт сайту ресторану з акцентом на зрозуміле меню, мобільний досвід і простий контакт або бронювання.',
+        bograchNote: '<strong>НЕОФІЦІЙНИЙ КОНЦЕПТ САЙТУ.</strong><br>Створено SERG WEB як портфоліо-концепт. Це не офіційний сайт Bograch і тут не заявляються результати реального клієнта.',
+        processKicker: '03 / Процес', processTitle: 'Зрозуміло від першого повідомлення до запуску.',
+        processIntro: 'Простий процес допомагає рухати проєкт без нескінченних правок і зайвої технічної плутанини.',
+        step1Title: 'Зрозуміти', step1Text: 'Бізнес, клієнтів, цілі та дію, яку сайт має зробити простішою.',
+        step2Title: 'Побудувати структуру', step2Text: 'Ієрархія контенту, секції та найкоротший корисний шлях для відвідувача.',
+        step3Title: 'Дизайн і розробка', step3Text: 'Візуальний напрям і адаптивна розробка будуються навколо однієї структури.',
+        step4Title: 'Запуск', step4Text: 'Фінальна перевірка на телефоні, посилання, публікація та передача сайту.',
+        aboutKicker: '04 / Про нас', aboutTitle: 'Невелика студія.<br>Сфокусована робота.',
+        aboutText1: 'SERG WEB створює сфокусовані сайти для малого та локального бізнесу. Завдання не в тому, щоб зробити бізнес «технологічним», а щоб його було легше зрозуміти, йому довіряти та з ним зв’язатися онлайн.',
+        aboutText2: 'У проєктах залишаємо тільки потрібне: зрозумілу структуру, сильну мобільну версію та функції, які справді потрібні бізнесу.',
+        location: 'Хуст, Україна · Працюємо з Україною та Європою',
+        contactEyebrow: 'Маєте локальний бізнес?', contactTitle: 'Зробімо так, щоб вас було легше обрати.',
+        contactInstagram: 'Instagram / написати “WEB”', footerTagline: 'САЙТИ ДЛЯ ЛОКАЛЬНОГО БІЗНЕСУ'
+      }
+    };
+
+    function detectInitialLanguage() {
+      const saved = localStorage.getItem('sergweb-language');
+      if (saved === 'ua' || saved === 'en') return saved;
+      const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+      return languages.some(lang => String(lang).toLowerCase().startsWith('uk')) ? 'ua' : 'en';
+    }
+
+    function setLanguage(lang, remember = true) {
+      const safeLang = lang === 'ua' ? 'ua' : 'en';
+      const dict = translations[safeLang];
+      document.documentElement.lang = safeLang === 'ua' ? 'uk' : 'en';
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (dict[key] !== undefined) el.textContent = dict[key];
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.dataset.i18nHtml;
+        if (dict[key] !== undefined) el.innerHTML = dict[key];
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        const active = btn.dataset.lang === safeLang;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+
+      document.title = safeLang === 'ua'
+        ? 'SERG WEB — Сайти для локального бізнесу'
+        : 'SERG WEB — Websites for Local Businesses';
+
+      if (remember) localStorage.setItem('sergweb-language', safeLang);
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang, true));
+    });
+    setLanguage(detectInitialLanguage(), false);
+
     const items = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       const observer = new IntersectionObserver((entries) => {
