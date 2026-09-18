@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/jpeg" href="./assets/serg-mark.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="SERG WEB — websites for small and local businesses in Ukraine and Europe.">
   <meta name="theme-color" content="#0F1115">
@@ -60,14 +61,18 @@
       letter-spacing: .12em;
     }
     .brand-mark {
-      width: 32px;
-      height: 32px;
+      width: 38px;
+      height: 38px;
       display: grid;
       place-items: center;
-      background: var(--accent);
-      color: var(--bg);
-      font-size: 17px;
-      font-weight: 1000;
+      overflow: hidden;
+      flex: 0 0 auto;
+    }
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     .nav-links {
       display: flex;
@@ -224,12 +229,18 @@
       position: absolute;
       inset: 50% auto auto 50%;
       transform: translate(-50%, -52%);
-      font-size: clamp(170px, 22vw, 320px);
-      line-height: 1;
-      font-weight: 1000;
-      letter-spacing: -.09em;
-      color: rgba(243,243,241,.045);
+      width: clamp(210px, 28vw, 380px);
+      aspect-ratio: 1;
+      opacity: .11;
+      mix-blend-mode: screen;
       user-select: none;
+      pointer-events: none;
+    }
+    .panel-symbol img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     .panel-bottom small {
       display: block;
@@ -512,7 +523,7 @@
       .shell { width: min(100% - 32px, var(--max)); }
       .nav { min-height: 68px; }
       .brand { font-size: 12px; }
-      .brand-mark { width: 29px; height: 29px; }
+      .brand-mark { width: 34px; height: 34px; }
       .nav-actions { gap: 7px; }
       .lang-switch { padding: 3px; }
       .lang-btn { min-width: 28px; height: 30px; padding: 0 5px; font-size: 9px; }
@@ -549,7 +560,7 @@
 <body>
   <header class="nav-wrap">
     <div class="shell nav">
-      <a class="brand" href="#top" aria-label="SERG WEB home"><span class="brand-mark">S</span><span>SERG WEB</span></a>
+      <a class="brand" href="#top" aria-label="SERG WEB home"><span class="brand-mark"><img src="./assets/serg-mark.jpg" alt="" aria-hidden="true"></span><span>SERG WEB</span></a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#services" data-i18n="navServices">Services</a>
         <a href="#work" data-i18n="navWork">Work</a>
@@ -584,7 +595,7 @@
             <span class="panel-index">01 / SERG WEB</span>
             <span class="panel-chip" data-i18n="region">Ukraine & Europe</span>
           </div>
-          <div class="panel-symbol">S</div>
+          <div class="panel-symbol"><img src="./assets/serg-mark.jpg" alt="" aria-hidden="true"></div>
           <div class="panel-bottom">
             <small data-i18n="panelSmall">Clear websites. A simpler path to your customer.</small>
             <h2 data-i18n="panelTitle">Help customers understand your business faster and take the next step.</h2>
