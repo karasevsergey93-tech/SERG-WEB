@@ -535,7 +535,13 @@
       .section-head { grid-template-columns: 1fr; gap: 18px; margin-bottom: 40px; }
       .section-head h2 { font-size: clamp(44px, 13vw, 70px); }
       .services { grid-template-columns: 1fr; }
-      .service { min-height: 210px; border-right: 0; border-bottom: 1px solid var(--line); }
+      .service {
+        min-height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        justify-content: flex-start;
+        gap: 52px;
+      }
       .service:last-child { border-bottom: 0; }
       .project-card { min-height: auto; }
       .project-copy { min-height: 500px; }
