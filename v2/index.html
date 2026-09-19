@@ -543,9 +543,14 @@
         gap: 52px;
       }
       .service:last-child { border-bottom: 0; }
+      .work .section-head { margin-bottom: 28px; }
+      .work .section-head h2 { font-size: clamp(40px, 11.5vw, 60px); line-height: .94; }
+      .work .section-head p { margin-top: 18px; font-size: 15px; }
       .project-card { min-height: auto; }
-      .project-copy { min-height: 500px; }
-      .project-visual { min-height: 420px; padding: 18px; }
+      .project-copy { min-height: auto; padding: 34px 34px 30px; }
+      .project-copy p { margin-top: 20px; }
+      .project-note { margin-top: 26px; padding-top: 16px; }
+      .project-visual { min-height: 390px; padding: 18px; }
       .concept-screen { aspect-ratio: 4 / 5; }
       .concept-nav span:not(.concept-logo) { display: none; }
       .process-grid { grid-template-columns: 1fr; }
@@ -649,8 +654,8 @@
         <div class="section-head reveal">
           <p class="section-kicker" data-i18n="workKicker">02 / Selected work</p>
           <div>
-            <h2 data-i18n="workTitle">One strong concept beats four fake case studies.</h2>
-            <p data-i18n="workIntro">The portfolio starts with work we can explain honestly. Bograch is presented as an unofficial website concept — not as a paid client project.</p>
+            <h2 data-i18n="workTitle">We show more than design — we show the thinking behind each decision.</h2>
+            <p data-i18n="workIntro">SERG WEB concepts show how structure, mobile experience and a clear next step can work for a local business.</p>
           </div>
         </div>
 
@@ -661,7 +666,7 @@
               <h3>Bograch.</h3>
               <p data-i18n="bograchText">A restaurant concept focused on clear menu access, a mobile-first experience and simple contact or reservation actions.</p>
             </div>
-            <div class="project-note" data-i18n-html="bograchNote"><strong>UNOFFICIAL WEBSITE CONCEPT.</strong><br>Created by SERG WEB as a portfolio concept. It is not the official Bograch website and does not claim client results.</div>
+            <div class="project-note" data-i18n-html="bograchNote"><strong>UNOFFICIAL CONCEPT · SERG WEB</strong><br>Created as a portfolio concept. This is not the official Bograch website.</div>
           </div>
 
           <div class="project-visual">
@@ -747,11 +752,11 @@
         service1Label: '01 / STRUCTURE', service1Title: 'Clear structure', service1Text: 'Services, benefits and important information — in a logical order, without unnecessary searching.',
         service2Label: '02 / MOBILE', service2Title: 'Easy on mobile', service2Text: 'Easy to use on a phone — without tiny text, confusing navigation or unnecessary steps.',
         service3Label: '03 / ACTION', service3Title: 'Simple next step', service3Text: 'Message, call, open maps or book — the right action is always close at hand.',
-        workKicker: '02 / Selected work', workTitle: 'One strong concept beats four fake case studies.',
-        workIntro: 'The portfolio starts with work we can explain honestly. Bograch is presented as an unofficial website concept — not as a paid client project.',
+        workKicker: '02 / Selected work', workTitle: 'We show more than design — we show the thinking behind each decision.',
+        workIntro: 'SERG WEB concepts show how structure, mobile experience and a clear next step can work for a local business.',
         tagRestaurant: 'Restaurant', tagConcept: 'Website concept', tagMukachevo: 'Mukachevo',
         bograchText: 'A restaurant concept focused on clear menu access, a mobile-first experience and simple contact or reservation actions.',
-        bograchNote: '<strong>UNOFFICIAL WEBSITE CONCEPT.</strong><br>Created by SERG WEB as a portfolio concept. It is not the official Bograch website and does not claim client results.',
+        bograchNote: '<strong>UNOFFICIAL CONCEPT · SERG WEB</strong><br>Created as a portfolio concept. This is not the official Bograch website.',
         processKicker: '03 / Process', processTitle: 'Clear from first message to launch.',
         processIntro: 'A simple process keeps the project moving without endless revisions or technical confusion.',
         step1Title: 'Understand', step1Text: 'Business, customers, goals and the action the website should make easier.',
@@ -780,11 +785,11 @@
         service1Label: '01 / СТРУКТУРА', service1Title: 'Зрозуміла структура', service1Text: 'Послуги, переваги та важлива інформація — у логічному порядку, без зайвого пошуку.',
         service2Label: '02 / МОБІЛЬНА ВЕРСІЯ', service2Title: 'Зручно зі смартфона', service2Text: 'Сайтом зручно користуватися зі смартфона — без дрібного тексту, складної навігації та зайвих дій.',
         service3Label: '03 / ДІЯ', service3Title: 'Простий наступний крок', service3Text: 'Написати, зателефонувати, відкрити карту або перейти до бронювання — потрібна дія завжди поруч.',
-        workKicker: '02 / Вибрані роботи', workTitle: 'Один сильний концепт кращий за чотири вигадані кейси.',
-        workIntro: 'У портфоліо показуємо лише те, що можемо чесно пояснити. Bograch — неофіційний концепт сайту, а не оплачений клієнтський проєкт.',
+        workKicker: '02 / Вибрані роботи', workTitle: 'Показуємо не просто дизайн, а логіку кожного рішення.',
+        workIntro: 'Концепти SERG WEB показують, як структура, мобільний досвід і зрозуміла дія можуть працювати для локального бізнесу.',
         tagRestaurant: 'Ресторан', tagConcept: 'Концепт сайту', tagMukachevo: 'Мукачево',
         bograchText: 'Концепт сайту ресторану з акцентом на зрозуміле меню, мобільний досвід і простий контакт або бронювання.',
-        bograchNote: '<strong>НЕОФІЦІЙНИЙ КОНЦЕПТ САЙТУ.</strong><br>Створено SERG WEB як портфоліо-концепт. Це не офіційний сайт Bograch і тут не заявляються результати реального клієнта.',
+        bograchNote: '<strong>НЕОФІЦІЙНИЙ КОНЦЕПТ · SERG WEB</strong><br>Створено як портфоліо-концепт. Це не офіційний сайт Bograch.',
         processKicker: '03 / Процес', processTitle: 'Зрозуміло від першого повідомлення до запуску.',
         processIntro: 'Простий процес допомагає рухати проєкт без нескінченних правок і зайвої технічної плутанини.',
         step1Title: 'Зрозуміти', step1Text: 'Бізнес, клієнтів, цілі та дію, яку сайт має зробити простішою.',
