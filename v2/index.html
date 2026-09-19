@@ -553,8 +553,17 @@
       .project-visual { min-height: 390px; padding: 18px; }
       .concept-screen { aspect-ratio: 4 / 5; }
       .concept-nav span:not(.concept-logo) { display: none; }
+      #process .section-head h2 { font-size: clamp(42px, 11.5vw, 60px); line-height: .94; }
+      #process .section-head { margin-bottom: 30px; }
       .process-grid { grid-template-columns: 1fr; }
-      .step, .step:nth-child(2) { border-right: 0; border-bottom: 1px solid var(--line); }
+      .step, .step:nth-child(2) {
+        min-height: 190px;
+        padding: 28px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .step h3 { margin-top: 48px; }
+      .step p { margin-top: 10px; }
       .step:last-child { border-bottom: 0; }
       .contact { padding: 82px 0; }
       .contact h2 { font-size: clamp(54px, 16vw, 82px); }
@@ -695,10 +704,10 @@
         </div>
 
         <div class="process-grid reveal">
-          <article class="step"><span class="step-no">01</span><h3 data-i18n="step1Title">Understand</h3><p data-i18n="step1Text">Business, customers, goals and the action the website should make easier.</p></article>
-          <article class="step"><span class="step-no">02</span><h3 data-i18n="step2Title">Structure</h3><p data-i18n="step2Text">Content hierarchy, sections and the shortest useful path for a visitor.</p></article>
-          <article class="step"><span class="step-no">03</span><h3 data-i18n="step3Title">Design & build</h3><p data-i18n="step3Text">Visual direction and responsive development shaped around the same structure.</p></article>
-          <article class="step"><span class="step-no">04</span><h3 data-i18n="step4Title">Launch</h3><p data-i18n="step4Text">Final mobile check, links, publishing and a clean handoff.</p></article>
+          <article class="step"><span class="step-no">01</span><h3 data-i18n="step1Title">Understand</h3><p data-i18n="step1Text">We start with your business, customers and the action the website should make easier.</p></article>
+          <article class="step"><span class="step-no">02</span><h3 data-i18n="step2Title">Structure</h3><p data-i18n="step2Text">We define the key content, sections and the clearest path for your customer.</p></article>
+          <article class="step"><span class="step-no">03</span><h3 data-i18n="step3Title">Design & build</h3><p data-i18n="step3Text">We agree on the visual direction and build the site for phone and desktop.</p></article>
+          <article class="step"><span class="step-no">04</span><h3 data-i18n="step4Title">Launch</h3><p data-i18n="step4Text">We check the site on mobile, connect the needed links and publish it.</p></article>
         </div>
       </div>
     </section>
@@ -759,10 +768,10 @@
         bograchNote: '<strong>UNOFFICIAL CONCEPT · SERG WEB</strong><br>Created as a portfolio concept. This is not the official Bograch website.',
         processKicker: '03 / Process', processTitle: 'Clear from first message to launch.',
         processIntro: 'A simple process keeps the project moving without endless revisions or technical confusion.',
-        step1Title: 'Understand', step1Text: 'Business, customers, goals and the action the website should make easier.',
-        step2Title: 'Structure', step2Text: 'Content hierarchy, sections and the shortest useful path for a visitor.',
-        step3Title: 'Design & build', step3Text: 'Visual direction and responsive development shaped around the same structure.',
-        step4Title: 'Launch', step4Text: 'Final mobile check, links, publishing and a clean handoff.',
+        step1Title: 'Understand', step1Text: 'We start with your business, customers and the action the website should make easier.',
+        step2Title: 'Structure', step2Text: 'We define the key content, sections and the clearest path for your customer.',
+        step3Title: 'Design & build', step3Text: 'We agree on the visual direction and build the site for phone and desktop.',
+        step4Title: 'Launch', step4Text: 'We check the site on mobile, connect the needed links and publish it.',
         aboutKicker: '04 / About', aboutTitle: 'Small studio.<br>Focused work.',
         aboutText1: 'SERG WEB creates focused websites for small and local businesses. The goal is not to make a business look “techy” — it is to make the business easier to understand, trust and contact online.',
         aboutText2: 'Projects are kept practical: clear structure, strong mobile experience and only the features the business actually needs.',
@@ -792,10 +801,10 @@
         bograchNote: '<strong>НЕОФІЦІЙНИЙ КОНЦЕПТ · SERG WEB</strong><br>Створено як портфоліо-концепт. Це не офіційний сайт Bograch.',
         processKicker: '03 / Процес', processTitle: 'Зрозуміло від першого повідомлення до запуску.',
         processIntro: 'Простий процес допомагає рухати проєкт без нескінченних правок і зайвої технічної плутанини.',
-        step1Title: 'Зрозуміти', step1Text: 'Бізнес, клієнтів, цілі та дію, яку сайт має зробити простішою.',
-        step2Title: 'Побудувати структуру', step2Text: 'Ієрархія контенту, секції та найкоротший корисний шлях для відвідувача.',
-        step3Title: 'Дизайн і розробка', step3Text: 'Візуальний напрям і адаптивна розробка будуються навколо однієї структури.',
-        step4Title: 'Запуск', step4Text: 'Фінальна перевірка на телефоні, посилання, публікація та передача сайту.',
+        step1Title: 'Зрозуміти', step1Text: 'Спочатку розбираємося у вашому бізнесі, клієнтах і тому, що сайт має допомогти їм зробити.',
+        step2Title: 'Побудувати структуру', step2Text: 'Визначаємо головний контент, секції та найзрозуміліший шлях для вашого клієнта.',
+        step3Title: 'Дизайн і розробка', step3Text: 'Погоджуємо вигляд сайту й збираємо його для телефону та комп’ютера.',
+        step4Title: 'Запуск', step4Text: 'Перевіряємо сайт на телефоні, підключаємо потрібні посилання та публікуємо.',
         aboutKicker: '04 / Про нас', aboutTitle: 'Невелика студія.<br>Сфокусована робота.',
         aboutText1: 'SERG WEB створює сфокусовані сайти для малого та локального бізнесу. Завдання не в тому, щоб зробити бізнес «технологічним», а щоб його було легше зрозуміти, йому довіряти та з ним зв’язатися онлайн.',
         aboutText2: 'У проєктах залишаємо тільки потрібне: зрозумілу структуру, сильну мобільну версію та функції, які справді потрібні бізнесу.',
