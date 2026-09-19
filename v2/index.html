@@ -702,7 +702,7 @@
                   <small>Традиційна закарпатська кухня</small>
                   <h4>Справжній смак Закарпаття.</h4>
                   <p>Традиційна кухня, тепла атмосфера та простий шлях від меню до бронювання.</p>
-                  <a class="concept-button" href="https://karasevsergey93-tech.github.io/bograch-restaurant/#menu" target="_blank" rel="noopener noreferrer" aria-label="Відкрити меню демо-сайту Bograch">Переглянути меню →</a>
+                  <a class="concept-button" data-bograch-demo href="https://karasevsergey93-tech.github.io/bograch-restaurant/#menu" target="_blank" rel="noopener noreferrer" aria-label="Відкрити меню демо-сайту Bograch">Переглянути меню →</a>
                 </div>
               </div>
             </div>
@@ -849,6 +849,17 @@
         const key = el.dataset.i18nHtml;
         if (dict[key] !== undefined) el.innerHTML = dict[key];
       });
+      const bograchDemo = document.querySelector('[data-bograch-demo]');
+      if (bograchDemo) {
+        const english = safeLang === 'en';
+        bograchDemo.href = english
+          ? 'https://karasevsergey93-tech.github.io/bograch-restaurant/en.html#menu'
+          : 'https://karasevsergey93-tech.github.io/bograch-restaurant/#menu';
+        bograchDemo.setAttribute('aria-label', english
+          ? 'Open the Bograch demo menu'
+          : 'Відкрити меню демо-сайту Bograch');
+      }
+
       document.querySelectorAll('.lang-btn').forEach(btn => {
         const active = btn.dataset.lang === safeLang;
         btn.classList.toggle('active', active);
