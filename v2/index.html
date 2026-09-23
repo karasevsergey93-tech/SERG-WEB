@@ -376,6 +376,20 @@
       font-size: 11px;
       line-height: 1.6;
     }
+    .project-demo {
+      width: fit-content;
+      margin-top: 18px;
+      padding: 12px 15px;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .project-demo:hover { background: #2A2D34; }
+    .project-demo:active { transform: translateY(1px); }
     .project-visual {
       min-width: 0;
       padding: clamp(24px, 4vw, 52px);
@@ -690,6 +704,7 @@
             </div>
             <div>
               <div class="project-note" data-i18n-html="bograchNote"><strong>UNOFFICIAL CONCEPT · SERG WEB</strong><br>Created as a portfolio concept. This is not the official Bograch website.</div>
+              <a class="project-demo" href="https://karasevsergey93-tech.github.io/bograch-restaurant/" target="_blank" rel="noopener noreferrer" data-i18n="bograchDemo">Open live demo →</a>
             </div>
           </div>
 
@@ -781,6 +796,7 @@
         tagRestaurant: 'Restaurant', tagConcept: 'Website concept',
         bograchText: 'A restaurant concept focused on clear menu access, a mobile-first experience and simple contact or reservation actions.',
         bograchNote: '<strong>UNOFFICIAL CONCEPT · SERG WEB</strong><br>Created as a portfolio concept. This is not the official Bograch website.',
+        bograchDemo: 'Open live demo →',
         processKicker: '03 / Process', processTitle: 'Clear from first message to launch.',
         processIntro: 'A simple process keeps the project moving without endless revisions or technical confusion.',
         step1Title: 'Understand', step1Text: 'We start with your business, customers and the action the website should make easier.',
@@ -814,6 +830,7 @@
         tagRestaurant: 'Ресторан', tagConcept: 'Концепт сайту',
         bograchText: 'Концепт сайту ресторану з акцентом на зрозуміле меню, мобільний досвід і простий контакт або бронювання.',
         bograchNote: '<strong>НЕОФІЦІЙНИЙ КОНЦЕПТ · SERG WEB</strong><br>Створено як портфоліо-концепт. Це не офіційний сайт Bograch.',
+        bograchDemo: 'Відкрити демо-сайт →',
         processKicker: '03 / Процес', processTitle: 'Зрозуміло від першого повідомлення до запуску.',
         processIntro: 'Простий процес допомагає рухати проєкт без нескінченних правок і зайвої технічної плутанини.',
         step1Title: 'Зрозуміти', step1Text: 'Спочатку розбираємося у вашому бізнесі, клієнтах і тому, що сайт має допомогти їм зробити.',
